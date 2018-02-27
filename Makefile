@@ -19,10 +19,13 @@ clean:
 	docker rmi $(APP):$(RELEASE) || true
 
 buildc: clean
-	cd ./src ; CGO_ENABLED=0 GOOS=${GOOS} GOARCH=${GOARCH} go build ${LDFLAGS} -o ../bin/${APP}
+	cd ./src ; CGO_ENABLED=0 GOOS=${GOOS} GOARCH=${GOARCH} go build ${LDFLAGS} -o ../bin/${APP}-${GOOS}
 
 container: buildc
 	docker build -t $(APP):$(RELEASE) .
+
+docker-compose: buildc
+	docker-compose build
 
 runc: container
 	docker stop $(APP):$(RELEASE) || true
@@ -33,7 +36,6 @@ runc: container
 # Build the project
 build:
 	cd ./src ; go build ${LDFLAGS} -o ../bin/${APP}
-	sh -c ./bin/${APP}
 
 # Run the project
 run:

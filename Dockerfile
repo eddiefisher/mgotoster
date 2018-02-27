@@ -1,7 +1,4 @@
-FROM scratch
+FROM alpine
 
-ENV PORT 8000
-EXPOSE $PORT
-
-COPY /bin/mgotoster /
-CMD ["/mgotoster"]
+COPY /bin/mgotoster-linux /
+CMD ["/mgotoster-linux"]
