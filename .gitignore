@@ -6,4 +6,5 @@ _testmain.go
 _test
 _obj
 
-
+data/db
+src/vendor
