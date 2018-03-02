@@ -1,18 +1,22 @@
 [godoc.org]: http://godoc.org/github.com/eddiefisher/mgotoster "godoc.org"
 
-##Install
+## Original
+
+    www.blog.labouardy.com/build-restful-api-in-go-and-mongodb/
+
+## Install
 
     go get github.com/eddiefisher/mgotoster
 
-##Docs
+## Docs
 
 On [godoc.org][]
 
-##Author
+## Author
 
 Eddie Fisher [eddi.fisher@gmail.com]
 
-##Copyright & License
+## Copyright & License
 
 Copyright (c) 2018, Eddie Fisher.
 All rights reserved.
